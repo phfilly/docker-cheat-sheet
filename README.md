@@ -71,3 +71,17 @@ Run `docker rmi image_id_here`
 
 Run `docker ps -a` to retrieve container id
 Run `docker rm container_id_here`
+
+# How do I SSH into a running container
+There is a docker exec command that can be used to connect to a container that is already running.
+
+Use `docker ps` to get the name of the existing container
+Use the command `docker exec -it <container name> /bin/bash` to get a bash shell in the container
+Generically, use `docker exec -it <container name> <command>` to execute whatever command you specify in the container.
+
+The proper way to run a command in a container is: 
+
+```
+$ docker-compose run <container name> <command>.
+```
+For example, to get a shell into your web container you might run `docker-compose run web /bin/bash`
