@@ -64,3 +64,10 @@ service awslogs status
 echo "Running app..."
 python main.py
 ```
+# Remove docker image & container
+
+Run `docker images` to retrieve the docker id's
+Run `docker rmi image_id_here`
+
+Run `docker ps -a` to retrieve container id
+Run `docker rm container_id_here`
