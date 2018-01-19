@@ -1,5 +1,5 @@
-# docker-cheat-sheet
-Docker commands I use the most and think are the most relevant to get you going
+# Docker Cheat Sheet
+Docker commands I use the most and think are the most relevant to get you going.
 
 # To run a docker image
 
@@ -8,19 +8,20 @@ $ docker build -t IMAGE_NAME .
 $ docker run IMAGE_NAME
 ```
 
-# Running the terminal within your container
+# Running a terminal within your container
 
 ```
 $ docker run --name IMAGE_NAME -it IMAGE_NAME:TAG /bin/bash
 ```
 
-# Running docker container with environment variables (append variables by adding `-e`)
+# Running docker container with EV
+Note: Append variables by adding `-e`
 
 ```
 $ docker run -e "DW_HOST=" -e "DW_PORT=" -e "DW_USER=" -e "DW_PASS=" -e "DW_DB=" -e "EMAIL_SERVER=" -e "EMAIL_FROM=" -e "EMAIL_USERNAME=" -e "EMAIL_PASSWORD=" -e "ACCESS_KEY_ID=" -e "SECRET_ACCESS_KEY=" IMAGE_NAME:TAG
 ```
 
-# Running docker container with environment variables and SSH'ing into that running container
+# Running docker container with EV's & SSH
 
 ```
 $ docker run -e "DW_HOST=" -e "DW_PORT=" -e "DW_USER=" -e "DW_PASS=" -e "DW_DB=" -e "EMAIL_SERVER=" -e "EMAIL_FROM=" -e "EMAIL_USERNAME=" -e "EMAIL_PASSWORD=" -e "ACCESS_KEY_ID=" -e "SECRET_ACCESS_KEY=" --name IMAGE_NAME:TAG -it IMAGE_NAME:TAG /bin/bash
@@ -32,11 +33,11 @@ $ docker run -e "DW_HOST=" -e "DW_PORT=" -e "DW_USER=" -e "DW_PASS=" -e "DW_DB="
 $ docker push IMAGE_NAME/REPO_NAME:TAG
 ```
 
-# Setting up AWS Cloudwatch with docker
+# Setting up AWS Cloudwatch
 
 Make sure you can run `aws` in your terminal first.
 
-# Example of a basic Python Dockerfile
+# Basic Python Dockerfile
 
 ```
 FROM python:3.5.2
