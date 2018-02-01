@@ -85,3 +85,9 @@ The proper way to run a command in a container is:
 $ docker-compose run <container name> <command>.
 ```
 For example, to get a shell into your web container you might run `docker-compose run web /bin/bash`
+
+# Viewing logs of a docker container
+
+```
+$ docker logs --tail 50 container_id
+```
